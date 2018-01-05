@@ -1,0 +1,22 @@
+defaultTasks 'clean', 'build'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "4.0"
+}
+
+apply plugin: "java"
+apply plugin: "eclipse"
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'commons-io:commons-io:2.4'
+    testCompile "junit:junit:4.12"
+}
